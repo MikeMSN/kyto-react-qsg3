@@ -8,12 +8,12 @@ const styles = {
     }
 }
 
-export default function TodoList(){
+export default function TodoListBox(){
 
     return (
-    <ul style={styles.ul}>
-        <li>1</li>
-        <li>2</li>
-    </ul>
+        <ul style={styles.ul}>
+            <li>1</li>
+            <li>2</li>
+        </ul>
     )
 }

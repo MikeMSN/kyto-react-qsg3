@@ -1,12 +1,12 @@
 import React from 'react';
-import TodoList from './Todo/TodoList'
+import TodoListBox from "./Todo/TodoListBox";
 
 
 function App() {
   return (
       <div className='wrapper'>
         <h1>React tutorial</h1>
-          <TodoList/>
+          <TodoListBox/>
       </div>
   )
 }
