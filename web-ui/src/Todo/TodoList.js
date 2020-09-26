@@ -11,7 +11,7 @@ const styles = {
 export default function TodoList(){
 
     return (
-    <ul styles={styles.ul}>
+    <ul style={styles.ul}>
         <li>1</li>
         <li>2</li>
     </ul>
