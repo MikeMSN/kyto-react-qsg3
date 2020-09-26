@@ -9,13 +9,15 @@ const styles = {
     }
 }
 
-export default function TodoListBox(){
+export default function TodoListBox(props){
 
     return (
         <ul style={styles.ul}>
-            <TodoItem/>
-            <TodoItem/>
-            <TodoItem/>
+            {
+                props.todos.map(todo => {
+                    return <TodoItem key = {todo.id} todo={todo}/>
+                })
+            }
         </ul>
     )
 }
