@@ -14,8 +14,8 @@ export default function TodoListBox(props){
     return (
         <ul style={styles.ul}>
             {
-                props.todos.map(todo => {
-                    return <TodoItem key = {todo.id} todo={todo}/>
+                props.todos.map((todo, index) => {
+                    return <TodoItem key = {todo.id} todo={todo} index = {index} />
                 })
             }
         </ul>
