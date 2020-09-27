@@ -10,13 +10,13 @@ const styles = {
     }
 }
 
-function TodoListBox(props){
+function TodoListBox(props,){
 
     return (
         <ul style={styles.ul}>
             {
                 props.todos.map((todo, index) => {
-                    return <TodoItem key = {todo.id} todo={todo} index = {index} />
+                    return <TodoItem key = {todo.id} todo={todo} index = {index} onChange={props.onToggle}/>
                 })
             }
         </ul>
@@ -24,7 +24,8 @@ function TodoListBox(props){
 }
 
 TodoListBox.propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.object).isRequired
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    onToggle: PropTypes.func.isRequired
 }
 
 export default TodoListBox
