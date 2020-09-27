@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import TodoListBox from "./Todo/TodoListBox";
 import Context from "./Context";
 import AddTodo from "./Todo/AddTodo";
 
 function App() {
-    const [todos, setTodos] = React.useState([
-        {id: 1, completed: false, title: 'Купить хлеб'},
-        {id: 2, completed: false, title: 'Купить масло'},
-        {id: 3, completed: false, title: 'Купить молоко'},
-    ])
+    const [todos, setTodos] = React.useState([])
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+            .then(response => response.json())
+            .then(json => {
+                setTodos(json);
+            })
+    }, [])
 
     function toggleTodo(id) {
         setTodos(todos.map(todo => {
